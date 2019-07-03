@@ -1,0 +1,216 @@
+/* Scss Document */
+@charset "utf-8";
+
+$main_color: #fff;
+$sub_color: #000;
+$main_font: sans-serif;
+$title_font: 'Archivo Black', sans-serif;
+$en_font: serif;
+$B_point: 768px;
+
+@mixin FLEX($dtype:flex, $jtype:center, $wtype:wrap) {
+    display: $dtype;
+    justify-content: $jtype;
+    flex-wrap: $wtype;
+}
+
+@mixin WHDM($Bwidth:auto, $Bheight:auto, $BMXWidth: none, $BMXHeight:none, $Bdisp:block, $Bmargin: 0 auto) {
+    width: $Bwidth;
+    height: $Bheight;
+    max-width: $BMXWidth;
+    max-height: $BMXHeight;
+    display: $Bdisp;
+    margin: $Bmargin;
+}
+
+* {
+  margin: 0;
+  padding: 0; }
+
+*, *::before, *::after {
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  font-size: 1.4rem; 
+  font-family: 'M PLUS 1p', sans-serif;
+  background: url(../images/icecream.jpg) no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0 auto;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+//h3セクションタイトル
+.section-title {
+    font-size: 2.4rem;
+    padding: 8px;
+    letter-spacing: 2px;
+}
+
+#wrapper {
+    position: relative;
+    height: 100vh;
+}
+
+#header {
+  width: 100%;
+  height: 120px;
+}
+
+#main {
+    width: 100%;
+    max-width: 1000px;
+}
+
+/*---------------------------------------------------------------------------
+
+                                    ヘッダー
+
+---------------------------------------------------------------------------*/
+.site__title {
+    font: {
+        size: 4.0rem;
+        family: $title_font;
+    }
+    letter-spacing: 3px;
+    padding: 10px;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    background: {
+        color: #21212B;
+    }
+    color: #fff;
+}
+.site__form-seach {
+    
+    .form__inner {
+        
+        .form__label {
+            
+            input[type="search"] {
+                
+            }
+            
+            input[type="submit"] {
+                
+            }
+        }
+    }
+}
+
+
+
+
+.site__ul {
+    margin-top: 30px;
+    @include FLEX();
+    
+    li {
+        list-style: none;
+        margin: 0 15px;
+        
+        
+        a {
+            display: block;
+            text-decoration: none;
+            padding: 7px 25px;
+            border-radius: 8px;
+            transition: 0.5s ease-out;
+            color: #fff;
+            letter-spacing: 2px;
+
+            &:hover {
+                color: #555;
+                background: #eee;
+            }
+        }
+
+
+    }
+}
+
+/*---------------------------------------------------------------------------
+
+                                    メイン
+
+---------------------------------------------------------------------------*/
+.contents-title {
+    font: {
+        size: 6.0rem;
+        family: $title_font;
+    }
+    color: rgba(255,255,255,0.5);
+    position: absolute;
+    bottom: 10vmin;
+    left: 10px;
+}
+
+/*---------------------------------------------------------------------------
+
+                                    ローカルなび
+
+---------------------------------------------------------------------------*/
+#aside {
+    float: right;
+    position: relative;
+    top: 10px;
+    right: 10px;
+}
+
+
+.local-nav__box {
+    
+    
+    li {
+        margin-bottom: 40px;
+        list-style: none;
+        
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.local-nav__link {
+    font: {
+        size: 3.0rem;
+        family: $title_font;
+    }
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: 0.5s;
+    width: 0%;
+    white-space: nowrap;
+    background-color: burlywood;
+    
+    &:hover {
+        width: 100%;
+        color: #3B2A1F;
+    }
+}
+
+
+/*---------------------------------------------------------------------------
+
+                                    フッタ
+
+---------------------------------------------------------------------------*/
+#footer {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
