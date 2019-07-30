@@ -3,7 +3,8 @@
 
 $main_color: #fff;
 $sub_color: #000;
-$main_font: sans-serif;
+$header_color: #F8D173;
+$main_font: 'M PLUS 1p', sans-serif;
 $title_font: 'Archivo Black', sans-serif;
 $en_font: serif;
 $B_point: 768px;
@@ -35,7 +36,7 @@ html {
 
 body {
   font-size: 1.4rem; 
-  font-family: 'M PLUS 1p', sans-serif;
+  font-family: $main_font;
   background: url(../images/icecream.jpg) no-repeat;
     background-position: center center;
     background-attachment: fixed;
@@ -62,8 +63,11 @@ body {
 }
 
 #header {
-  width: 100%;
-  height: 120px;
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
 }
 
 #main {
@@ -83,25 +87,42 @@ body {
     }
     letter-spacing: 3px;
     padding: 10px;
-    margin-block-start: 0;
-    margin-block-end: 0;
     background: {
         color: #21212B;
     }
     color: #fff;
 }
 .site__form-seach {
-    
+    width: 230px;
+    position: absolute;
+    top: 20px;
+    right: 15%;;
+
     .form__inner {
         
         .form__label {
-            
+            display: flex;
+            justify-content: flex-start;
+
             input[type="search"] {
-                
+                border: 1px solid #ccc;
+                background: rgba(240,240,240,0.4);
+                height: 26px;
+                margin: 0;
+                display: block;
             }
             
             input[type="submit"] {
-                
+                border: 1px solid #ccc;
+                border-left: none;
+                background: #fff;
+                font-size: 1.2rem;
+                letter-spacing: 2px;
+                padding: 6px 10px;
+                line-height: 1;
+                vertical-align: middle;
+                margin: 0;
+                color: #999;
             }
         }
     }
@@ -206,11 +227,41 @@ body {
                                     フッタ
 
 ---------------------------------------------------------------------------*/
-#footer {
+
+
+.address__wrap {
+    text-align: center;
     position: absolute;
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
+    color: #fff;
+    text-shadow: 1px 1px 1px #333;
+
+    .address__address {
+        letter-spacing: 1px;
+    }
+
+    .address__copy {
+        letter-spacing: 1px;
+    }
 }
 
+.sns__link {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
 
+    ul {
+        display: flex;
+
+        li {
+            list-style: none;
+            margin: 0 17px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    
+}
