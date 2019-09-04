@@ -21,6 +21,7 @@
 <!-- InstanceBeginEditable name="meta" -->
 <meta name="" content="">
 <title>フルスクリーン</title>
+<link href="css/hamburger.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Archivo+Black&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p&display=swap" rel="stylesheet">
 
@@ -53,6 +54,12 @@
         </ul>
     </nav>
     <!-- InstanceBeginEditable name="header" -->
+    <!--スマフォ・タブレット画面で表示-->
+    <div class="responsive-globalmenu">
+        <a id="responsive-globalmenu-button" class="hamburger" href="#">
+            <div class="hamburger-inner"></div>
+        </a>  
+    </div>
     <div class="site__form-seach">
         <form class="form__inner" action="#" method="get" id="searchForm">
             <label for="searchForm" class="form__label">
@@ -128,8 +135,8 @@
     <!-- InstanceBeginEditable name="footer" -->
     <div class="sns__link">
         <ul>
-            <li><a href=""><img src="images/facebook.svg" width="45" height="45" alt="fb"></a></li>
-            <li><a href=""><img src="images/twitter.svg" width="45" height="45" alt="twitter"></a></li>
+            <li><a href=""><img class="sns__image" src="images/facebook.svg" alt="fb"></a></li>
+            <li><a href=""><img class="sns__image" src="images/twitter.svg" alt="twitter"></a></li>
         </ul>
     </div>
     <!-- InstanceEndEditable -->
@@ -137,7 +144,15 @@
 </div>
 <!-- InstanceBeginEditable name="script" -->
 <script>
-    
+    (function(){
+        const buttonEvent = document.querySelector('.hamburger');
+        buttonEvent.addEventListener('click', function(){
+            const menuShow = document.querySelector('.site__ul');
+            menuShow.classList.toggle('show');
+        });
+        
+        
+    })();
 </script>    
 <!-- InstanceEndEditable -->
 </body>
