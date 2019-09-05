@@ -60,14 +60,6 @@
             <div class="hamburger-inner"></div>
         </a>  
     </div>
-    <div class="site__form-seach">
-        <form class="form__inner" action="#" method="get" id="searchForm">
-            <label for="searchForm" class="form__label">
-                <input type="search" placeholder="検索..." form="searchForm">
-                <input type="submit" form="seachForm">
-            </label>
-        </form>
-    </div>
     <!-- InstanceEndEditable -->
 </header>
 
@@ -147,8 +139,11 @@
     (function(){
         const buttonEvent = document.querySelector('.hamburger');
         buttonEvent.addEventListener('click', function(){
-            const menuShow = document.querySelector('.site__ul');
-            menuShow.classList.toggle('show');
+            setTimeout(function(){
+                const menuShow = document.querySelector('.site__ul');
+                menuShow.classList.toggle('show');
+            }, 100);
+            
         });
         
         

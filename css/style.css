@@ -57,35 +57,6 @@ body {
   background-color: #21212B;
   color: #fff; }
 
-.site__form-seach {
-  width: 230px;
-  position: absolute;
-  top: 20px;
-  right: 15%; }
-
-.site__form-seach .form__inner .form__label {
-  display: flex;
-  justify-content: flex-start; }
-
-.site__form-seach .form__inner .form__label input[type="search"] {
-  border: 1px solid #ccc;
-  background: rgba(240, 240, 240, 0.4);
-  height: 26px;
-  margin: 0;
-  display: block; }
-
-.site__form-seach .form__inner .form__label input[type="submit"] {
-  border: 1px solid #ccc;
-  border-left: none;
-  background: #fff;
-  font-size: 1.2rem;
-  letter-spacing: 2px;
-  padding: 6px 10px;
-  line-height: 1;
-  vertical-align: middle;
-  margin: 0;
-  color: #999; }
-
 .site__ul {
   margin-top: 30px;
   display: flex;
@@ -124,7 +95,7 @@ body {
 
 /*---------------------------------------------------------------------------
 
-                        ローカルなび
+                        ローカルナビ
 
 ---------------------------------------------------------------------------*/
 #aside {
@@ -207,19 +178,14 @@ body {
     z-index: 2; }
 
   .site__title {
-    padding-bottom: 50px;
+    padding: 30px;
     font-size: 3.2rem;
     text-align: center;
     white-space: nowrap; }
 
-  .site__form-seach {
-    top: 58px;
-    left: 50%;
-    transform: translateX(-50%); }
-
   .responsive-globalmenu {
     position: absolute;
-    top: 56px;
+    top: 106px;
     right: 12px;
     background: #fff;
     padding: 10px 6px;
@@ -232,6 +198,7 @@ body {
 
   .site__ul {
     display: none;
+    opacity: 0;
     margin: 0;
     background: white;
     position: absolute;
@@ -243,8 +210,18 @@ body {
         padding: 20px 25px; }
 
   .show {
-    display: block; }
+    opacity: 0;
+    display: block;
+    animation: navigation 0.6s forwards ease; }
 
+  @keyframes navigation {
+    0% {
+      opacity: 0;
+      display: block;
+      width: 30%; }
+    100% {
+      width: 50%;
+      opacity: 1; } }
   .contents-title {
     font-size: 4.5rem;
     line-height: 1.5;
